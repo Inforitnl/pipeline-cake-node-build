@@ -20,10 +20,15 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
     && apt-get update -y \
     && apt-get install -y dotnet-sdk-2.1
 
+# install dos2unix
+RUN apt-get install -y dos2unix
+
 # cleanup
-RUN rm -rf /var/lib/apt/lists/* /tmp/*
+RUN rm -rf /var/lib/apt/lists/* /tmp/* packages-microsoft-prod.deb
 
 # Set workdir alias
 WORKDIR /api
 
-CMD ["/bin/bash", "build.sh"]
+# add entrypoint and run
+ADD entrypoint.sh /entrypoint.sh
+CMD ["/bin/bash", "/entrypoint.sh"]

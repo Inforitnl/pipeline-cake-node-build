@@ -37,3 +37,10 @@ pipelines:
         script:
           - ./build.sh
 ```
+
+# scripts
+
+| Command | Description                         |
+|---------|-------------------------------------|
+|  build  | build the container with latest tag |
+|  push   | pushes the container                |

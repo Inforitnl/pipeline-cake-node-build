@@ -4,6 +4,8 @@
 
 Docker image to automate mono builds on bitbucket using pipelines.
 
+builds: https://hub.docker.com/r/inforitnl/cake-build/
+
 # Instructions:
 
 1. update dockerfile

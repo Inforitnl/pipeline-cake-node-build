@@ -23,6 +23,9 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 # install dos2unix
 RUN apt-get install -y dos2unix
 
+# install dotnet cake v3
+RUN dotnet tool install -g Cake.Tool --version 0.30.0
+
 # cleanup
 RUN rm -rf /var/lib/apt/lists/* /tmp/* packages-microsoft-prod.deb
 

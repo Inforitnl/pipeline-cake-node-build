@@ -32,6 +32,12 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* packages-microsoft-prod.deb
 # Set workdir alias
 WORKDIR /api
 
+# # Fix .netcore paths if dotnet is installed
+RUN mkdir -p ~/scripts
+ADD scripts /scripts
+RUN echo "source /scripts/dotnetcore.sh" >> ~/.bashrc
+
 # add entrypoint and run
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]

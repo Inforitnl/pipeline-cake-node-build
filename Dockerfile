@@ -23,12 +23,21 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 # install dos2unix
 RUN apt-get install -y dos2unix
 
+# install dotnet cake v3
+RUN dotnet tool install -g Cake.Tool --version 0.30.0
+
 # cleanup
 RUN rm -rf /var/lib/apt/lists/* /tmp/* packages-microsoft-prod.deb
 
 # Set workdir alias
 WORKDIR /api
 
+# # Fix .netcore paths if dotnet is installed
+RUN mkdir -p ~/scripts
+ADD scripts /scripts
+RUN echo "source /scripts/dotnetcore.sh" >> ~/.bashrc
+
 # add entrypoint and run
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]

@@ -40,4 +40,4 @@ RUN echo "source /scripts/dotnetcore.sh" >> ~/.bashrc
 # add entrypoint and run
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-CMD ["/bin/bash", "/entrypoint.sh"]
+CMD ["/bin/bash","-i", "/entrypoint.sh"]

@@ -16,9 +16,9 @@ RUN apt-get install -y mono-runtime-sgen mono-runtime binutils curl mono-devel c
 
 # install dotnetcore
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
-    && dpkg -i packages-microsoft-prod.deb \ 
+    && dpkg -i packages-microsoft-prod.deb \
     && apt-get update -y \
-    && apt-get install -y dotnet-sdk-2.1
+    && apt-get install -y dotnet-sdk-2.2 
 
 # install dos2unix
 RUN apt-get install -y dos2unix

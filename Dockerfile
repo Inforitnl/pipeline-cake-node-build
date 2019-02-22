@@ -23,6 +23,10 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 # install dos2unix
 RUN apt-get install -y dos2unix
 
+# install node
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
+
 # install dotnet cake v3
 RUN dotnet tool install -g Cake.Tool --version 0.30.0
 

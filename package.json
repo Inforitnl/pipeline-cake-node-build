@@ -1,21 +1,21 @@
 {
-  "name": "cake-build",
-  "version": "1.0.0",
-  "description": "[![logo](./logo.jpg)](https://inforit.nl)",
-  "main": "index.js",
-  "scripts": {
-    "build": "docker build -t inforitnl/cake-build .",
-    "push": "docker push inforitnl/cake-build"
-    
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Inforitnl/pipeline-cake-build.git"
-  },
-  "author": "Rick van Lieshout <info@rickvanlieshout.com> (http://rickvanlieshout.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Inforitnl/pipeline-cake-build/issues"
-  },
-  "homepage": "https://github.com/Inforitnl/pipeline-cake-build#readme"
+    "name": "cake-node-build",
+    "version": "1.0.0",
+    "description": "[![logo](./logo.jpg)](https://inforit.nl)",
+    "main": "index.js",
+    "scripts": {
+        "build": "docker build -t inforitnl/cake-node-build .",
+        "push": "docker push inforitnl/cake-node-build"
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Inforitnl/pipeline-cake-node-build.git"
+    },
+    "author": "Rick van Lieshout <info@rickvanlieshout.com> (http://rickvanlieshout.com)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Inforitnl/pipeline-cake-node-build/issues"
+    },
+    "homepage": "https://github.com/Inforitnl/pipeline-cake-node-build#readme"
 }
